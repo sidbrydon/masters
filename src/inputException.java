@@ -28,20 +28,17 @@ public class inputException extends Exception
         inputCheck = "Invalid move.";
     }
              
-    public inputException (int inpEntered)
-    {
-        inputCheck = "Invalid move. You must remove between 1 and " 
-                    + inpEntered + " stones.";
+    public inputException (final int inpEntered) {
+        inputCheck = "Invalid move. You must remove between 1 and " + inpEntered + " stones.";
         inputCheck = inputCheck.trim();
     }
-    
-    public inputException (int comEntered, int otherEntered)
-    {
+
+    public inputException(final int comEntered, final int otherEntered) {
         inputCheck = "Incorrect number of arguments supplied to command.";
         inputCheck = inputCheck.trim();
-    }        
+    }
 
-    public inputException (String badCommand)
+    public inputException(final String badCommand)
     {   
         inputCheck = "'" + badCommand + "' is not a valid command.";
     }

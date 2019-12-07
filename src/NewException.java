@@ -27,7 +27,7 @@ public class NewException extends Exception {
      *
      * @param msg the detail message.
      */
-    public NewException(String msg) {
+    public NewException(final String msg) {
         super(msg);
     }
 }
