@@ -12,6 +12,30 @@ This file manages the game and outputs the winner
 /* Declaration of the Nimsys Class */
 public class NimGame 
 {
+    /**
+     *
+     */
+    private static final int _0 = 0;
+    /**
+     *
+     */
+    private static final int INT = _0;
+    /**
+     *
+     */
+    private static final int INT2 = INT;
+    /**
+     *
+     */
+    private static final int INT22 = INT2;
+    /**
+     *
+     */
+    private static final int INT222 = INT22;
+    /**
+     *
+     */
+    private static final int INT2222 = INT222;
     private int stoneCount;
     private int upperBound;
     private NimPlayer plOne;
@@ -56,7 +80,6 @@ public class NimGame
 
         /* Set a variable up that can be used to switch between players */
         final int pTurn = 1;
-<<<<<<< HEAD
 
         /* Get required variables for Player 1 & 2 */
         final String p1Fore = plOne.getForename(), p2Fore = plTwo.getForename();
@@ -64,15 +87,6 @@ public class NimGame
         final String p1Sur = plOne.getSurname(), p2Sur = plTwo.getSurname();
         final boolean p1AI = plOne.getAIStatus(), p2AI = plTwo.getAIStatus();
 
-=======
-        
-        /* Get required variables for Player 1 & 2 */
-        final String p1Fore = plOne.getForename(), p2Fore = plTwo.getForename();
-        final String p1User = plOne.getUsername(), p2User = plTwo.getUsername();
-        final String p1Sur = plOne.getSurname(), p2Sur = plTwo.getSurname();
-        final boolean p1AI = plOne.getAIStatus(), p2AI = plTwo.getAIStatus();
-        
->>>>>>> 251c690bb172941ff40291560f22c32712920a93
         /* Start the game with the game configuration and continue */
         System.out.println();
         System.out.println("Initial stone count: " + initial);
@@ -81,7 +95,6 @@ public class NimGame
         System.out.println("Player 2: " + p2Fore + " " + p2Sur);
 
         /* Keep looping until exiting the game */
-<<<<<<< HEAD
         while (initial > 0) {
             if (pTurn % 2 != 0) {
                 plUser = p1User;
@@ -98,20 +111,6 @@ public class NimGame
                 } else {
                     final NimHumanPlayer player = (NimHumanPlayer) this.plOne;
                     initial = plTurn(initial, upper, plFore, pTurn, player);
-=======
-        while (initial > 0)
-        {
-            if (pTurn % 2 != 0)
-            {
-                plUser = p1User; plFore = p1Fore; 
-                plSurn = p1Sur; plAIuser = p1AI;
-                opUser = p2User; opFore = p2Fore; 
-                opSurn = p2Sur; opAIuser = p2AI;
-                if (this.plOne.getAIStatus())
-                {
-                    final NimAIPlayer player = (NimAIPlayer)this.plOne;
-                    initial = plTurn(initial,upper,plFore,pTurn, player);
->>>>>>> 251c690bb172941ff40291560f22c32712920a93
                 }
             } else {
                 plUser = p2User;
@@ -133,21 +132,16 @@ public class NimGame
             }
 
             /* Check to see if this was the last possible move */
-            if (initial == 0) {
+            if (initial == INT2222) {
                 System.out.println();
                 winner = opFore + " " + opSurn + " wins!";
                 winner = winner.trim();
                 System.out.println("Game Over");
                 System.out.println(winner);
             }
-<<<<<<< HEAD
             /*
              * Increment the current turn which will swap the player and opponent.
              */
-=======
-            /* Increment the current turn which will swap the player
-            and opponent. */
->>>>>>> 251c690bb172941ff40291560f22c32712920a93
             pTurn += 1;
         }
         this.winnerName = opUser;
