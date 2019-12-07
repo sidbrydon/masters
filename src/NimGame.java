@@ -60,7 +60,7 @@ public class NimGame
         /* Set a variable up that can be used to switch between players */        
         int pTurn = 1;
         
-        /* Get required variables for Player 1 & 2*/
+        /* Get required variables for Player 1 & 2 */
         String p1Fore = plOne.getForename(), p2Fore = plTwo.getForename();
         String p1User = plOne.getUsername(), p2User = plTwo.getUsername();
         String p1Sur = plOne.getSurname(), p2Sur = plTwo.getSurname();
@@ -74,7 +74,7 @@ public class NimGame
         System.out.println("Player 2: " + p2Fore + " " + p2Sur);
         
 
-        /* Keep looping until exiting the game*/
+        /* Keep looping until exiting the game */
         while (initial > 0)
         {
             if (pTurn % 2 != 0)
@@ -123,7 +123,7 @@ public class NimGame
                 System.out.println(winner);
             }
             /* Increment the current turn which will swap the player
-            and opponent.*/
+            and opponent. */
             pTurn += 1;
         }
         this.winnerName = opUser;
@@ -456,5 +456,5 @@ public class NimGame
     }
     /* End of Accessors */
     
-/*Final End of Class, no more code after here*/    
+/*Final End of Class, no more code after here */    
 }
