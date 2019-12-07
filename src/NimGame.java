@@ -55,7 +55,7 @@ public class NimGame
         boolean plAIuser, opAIuser;
 
         /* Set a variable up that can be used to switch between players */
-        int pTurn = 1;
+        final int pTurn = 1;
 <<<<<<< HEAD
 
         /* Get required variables for Player 1 & 2 */
@@ -67,10 +67,10 @@ public class NimGame
 =======
         
         /* Get required variables for Player 1 & 2 */
-        String p1Fore = plOne.getForename(), p2Fore = plTwo.getForename();
-        String p1User = plOne.getUsername(), p2User = plTwo.getUsername();
-        String p1Sur = plOne.getSurname(), p2Sur = plTwo.getSurname();
-        boolean p1AI = plOne.getAIStatus(), p2AI = plTwo.getAIStatus();
+        final String p1Fore = plOne.getForename(), p2Fore = plTwo.getForename();
+        final String p1User = plOne.getUsername(), p2User = plTwo.getUsername();
+        final String p1Sur = plOne.getSurname(), p2Sur = plTwo.getSurname();
+        final boolean p1AI = plOne.getAIStatus(), p2AI = plTwo.getAIStatus();
         
 >>>>>>> 251c690bb172941ff40291560f22c32712920a93
         /* Start the game with the game configuration and continue */
@@ -109,7 +109,7 @@ public class NimGame
                 opSurn = p2Sur; opAIuser = p2AI;
                 if (this.plOne.getAIStatus())
                 {
-                    NimAIPlayer player = (NimAIPlayer)this.plOne;
+                    final NimAIPlayer player = (NimAIPlayer)this.plOne;
                     initial = plTurn(initial,upper,plFore,pTurn, player);
 >>>>>>> 251c690bb172941ff40291560f22c32712920a93
                 }
