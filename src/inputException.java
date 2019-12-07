@@ -14,7 +14,11 @@ This file manages the exceptions seen in the game
  */
 public class inputException extends Exception
 {
-    private String inputCheck;   
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    private String inputCheck;
     
     /**
      * Constructors, referenced from the base Class

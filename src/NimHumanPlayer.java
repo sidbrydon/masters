@@ -30,45 +30,45 @@ public class NimHumanPlayer extends NimPlayer
      * @param aisur
      * @param aifore 
      */
-    public NimHumanPlayer(String aiuser, String aisur, String aifore) 
-    {
+    public NimHumanPlayer(final String aiuser, final String aisur, final String aifore) {
         super(aiuser, aisur, aifore);
         super.setAIStatus(false);
     }
-    
-    
+
     /**
      * Performs the basic stone removal by interacting with the user
+     * 
      * @param i
      * @param u
      * @param turnNumber
      * @return
      */
     @Override
-    public int RemoveStone(int i,int u,int turnNumber)
-    {
-        int stoneTurn;    
-        String winner, strstoneTurn = ""; 
-        
+    public int RemoveStone(final int i, final int u, final int turnNumber) {
+        int stoneTurn;
+        final String winner;
+        String strstoneTurn = "";
+
         strstoneTurn = Nimsys.KEYBOARD.nextLine();
         strstoneTurn = strstoneTurn.trim();
         stoneTurn = Integer.parseInt(strstoneTurn);
-        
-        this.numRemove = stoneTurn;
-        
-        return this.numRemove;
-    } 
 
-    /** Performs the advanced move removal using interaction with the 
-     * user
+        this.numRemove = stoneTurn;
+
+        return this.numRemove;
+    }
+
+    /**
+     * Performs the advanced move removal using interaction with the user
+     * 
      * @param i
      * @param u
      * @param turnNumber
      * @param lastmove
-     * @return 
+     * @return
      */
     @Override
-    public String RemoveadvStone(int i,int u,int turnNumber, String lastmove)
+    public String RemoveadvStone(final int i, final int u, final int turnNumber, final String lastmove)
     {            
         String inputs, stoneTurn = null;        
         

@@ -11,8 +11,12 @@
 public class NewException extends Exception {
 
     /**
-     * Creates a new instance of <code>NewException</code> without detail
-     * message.
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * Creates a new instance of <code>NewException</code> without detail message.
      */
     public NewException() {
     }

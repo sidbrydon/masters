@@ -31,66 +31,62 @@ public class NimAIPlayer extends NimPlayer implements Testable
     }
     
     /* Create the full NimAIPlayer */
-    public NimAIPlayer(String aiuser, String aisur, String aifore) 
-    {
+    public NimAIPlayer(final String aiuser, final String aisur, final String aifore) {
         super(aiuser, aisur, aifore);
         super.setAIStatus(true);
     }
-    
+
     /**
      * End of Constructors
      */
-    
-    /** 
-     * Method to perform the AI move taking the:
-     * Current Stone Count
-     * Upper Bound of Stones
-     * Boolean of whether the AI player goes first
+
+    /**
+     * Method to perform the AI move taking the: Current Stone Count Upper Bound of
+     * Stones Boolean of whether the AI player goes first
+     * 
      * @param curi
      * @param curu
      * @param turnNo
-     * @return 
+     * @return
      **/
     @Override
-    public int RemoveStone (int curi, int curu, int turnNo)
-    {
-        int remai = curi; int M = curu;      
-        int moveai = ((remai - 1) % (M + 1));
-        
-	if (moveai == 0) 
-        {
+    public int RemoveStone(final int curi, final int curu, final int turnNo) {
+        final int remai = curi;
+        final int M = curu;
+        final int moveai = ((remai - 1) % (M + 1));
+
+        if (moveai == 0) {
             return (int) Math.round(Math.random() * (M - 1) + 1);
-        }
-        else 
-        {
+        } else {
             return moveai;
         }
     }
-    
-        /**
+
+    /**
      * Method to take input from the game and utilize the advanced move
+     * 
      * @param i
      * @param u
      * @param turnNumber
      * @param lastmove
-     * @return 
+     * @return
      */
     @Override
-    public String RemoveadvStone(int i,int u,int turnNumber, String lastmove)
-    {            
+    public String RemoveadvStone(final int i, final int u, final int turnNumber, final String lastmove) {
         String stoneTurn;
-        stoneTurn = advancedMove(NimGame.gameStatus,lastmove);
+        stoneTurn = advancedMove(NimGame.gameStatus, lastmove);
         return stoneTurn;
     }
-    
+
     /**
      * Method to take an advanced move via the AI
+     * 
      * @param available
      * @param lastMove
-     * @return 
+     * @return
      */
     @Override
-    public String advancedMove(boolean[] available, String lastMove) 
+    public String advancedMove(final boolean[] available, final String lastMove) 
     {
         // the implementation of the victory
         // guaranteed strategy designed by you
