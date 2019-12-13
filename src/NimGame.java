@@ -35,12 +35,14 @@ public class NimGame
     /**
      *
      */
-    private static final int INT2222 = INT222;
+    static final int INT2222 = INT222;
     private int stoneCount;
     private int upperBound;
     private NimPlayer plOne;
-    private NimPlayer plTwo;
-    private String showStars, winnerName, advStars;
+    NimPlayer plTwo;
+    private String showStars;
+	String winnerName;
+	private String advStars;
     public static boolean [] gameStatus;
     private boolean available;
         
@@ -59,7 +61,7 @@ public class NimGame
         this.upperBound = bound; /* An upper bound on stone removal */
         setPlayerOne(unamep1);
         setPlayerTwo(unamep2);
-        playGame(this.stoneCount, this.upperBound);
+        plOne.playGame(this, this.stoneCount, this.upperBound);
     }
 
     /* Constructor to play the advanced NimGame */
@@ -72,83 +74,8 @@ public class NimGame
         playadvGame(this.stoneCount, this.upperBound);
     }
 
-    /* Constructor containing information to play the basic NimGame */
-    private void playGame(int initial, final int upper) {
-        String plUser, plFore, plSurn;
-        String opUser = null, opFore, opSurn, winner;
-        boolean plAIuser, opAIuser;
-
-        /* Set a variable up that can be used to switch between players */
-        final int pTurn = 1;
-
-        /* Get required variables for Player 1 & 2 */
-        final String p1Fore = plOne.getForename(), p2Fore = plTwo.getForename();
-        final String p1User = plOne.getUsername(), p2User = plTwo.getUsername();
-        final String p1Sur = plOne.getSurname(), p2Sur = plTwo.getSurname();
-        final boolean p1AI = plOne.getAIStatus(), p2AI = plTwo.getAIStatus();
-
-        /* Start the game with the game configuration and continue */
-        System.out.println();
-        System.out.println("Initial stone count: " + initial);
-        System.out.println("Maximum stone removal: " + upper);
-        System.out.println("Player 1: " + p1Fore + " " + p1Sur);
-        System.out.println("Player 2: " + p2Fore + " " + p2Sur);
-
-        /* Keep looping until exiting the game */
-        while (initial > 0) {
-            if (pTurn % 2 != 0) {
-                plUser = p1User;
-                plFore = p1Fore;
-                plSurn = p1Sur;
-                plAIuser = p1AI;
-                opUser = p2User;
-                opFore = p2Fore;
-                opSurn = p2Sur;
-                opAIuser = p2AI;
-                if (this.plOne.getAIStatus()) {
-                    final NimAIPlayer player = (NimAIPlayer) this.plOne;
-                    initial = plTurn(initial, upper, plFore, pTurn, player);
-                } else {
-                    final NimHumanPlayer player = (NimHumanPlayer) this.plOne;
-                    initial = plTurn(initial, upper, plFore, pTurn, player);
-                }
-            } else {
-                plUser = p2User;
-                plFore = p2Fore;
-                plSurn = p2Sur;
-                plAIuser = p2AI;
-                opUser = p1User;
-                opFore = p1Fore;
-                opSurn = p1Sur;
-                opAIuser = p1AI;
-                if (this.plTwo.getAIStatus()) {
-                    final NimAIPlayer player = (NimAIPlayer) this.plTwo;
-                    initial = plTurn(initial, upper, plFore, pTurn, player);
-                } else {
-                    final NimHumanPlayer player = (NimHumanPlayer) this.plTwo;
-                    initial = plTurn(initial, upper, plFore, pTurn, player);
-                }
-
-            }
-
-            /* Check to see if this was the last possible move */
-            if (initial == INT2222) {
-                System.out.println();
-                winner = opFore + " " + opSurn + " wins!";
-                winner = winner.trim();
-                System.out.println("Game Over");
-                System.out.println(winner);
-            }
-            /*
-             * Increment the current turn which will swap the player and opponent.
-             */
-            pTurn += 1;
-        }
-        this.winnerName = opUser;
-    }
-
     /* Constrcutor containing information to play the basic NimGame move */
-    private int plTurn(int i, final int u, final String pf, final int turnNumber, final NimPlayer player) {
+    int plTurn(int i, final int u, final String pf, final int turnNumber, final NimPlayer player) {
         int stoneTurn;
         setStars(i);
 
